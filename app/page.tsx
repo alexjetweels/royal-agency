@@ -28,15 +28,13 @@ export default function Home() {
     setDropdownVisible(false);
   };
 
-  const websiteDesignRef = useRef<HTMLDivElement>(null);
-  const graphicDesignRef = useRef<HTMLDivElement>(null);
+  const processRef = useRef<HTMLDivElement>(null);
   const shopifyStoresRef = useRef<HTMLDivElement>(null);
-  const brandsRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const scrollToProcess = () => {
     router.push('/');
-    websiteDesignRef.current?.scrollIntoView({
+    processRef.current?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest',
@@ -44,13 +42,11 @@ export default function Home() {
   };
 
   const scrollToShopifyStores = () => {
-    router.push('/');
     shopifyStoresRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Function to scroll to Services section
   const scrollToServices = () => {
-    router.push('/');
     servicesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -58,7 +54,6 @@ export default function Home() {
     <div className='w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden'>
       <Navbar
         scrollToProcess={scrollToProcess}
-        scrollToShopifyStores={scrollToShopifyStores}
         scrollToServices={scrollToServices}
       />
 
@@ -85,16 +80,14 @@ export default function Home() {
           <SliderOne />
         </div>
 
-        <div ref={graphicDesignRef}>
+        <div ref={processRef}>
           <WorkProcess />
         </div>
         <div ref={shopifyStoresRef}>
           <ShopifyStores />
         </div>
-        {/* <div ref={brandsRef}>
-          <Brands />
-        </div> */}
-        <div id='services'>
+
+        <div ref={servicesRef}>
           <Services />
         </div>
         <InfiniteMovingCardsDemo />

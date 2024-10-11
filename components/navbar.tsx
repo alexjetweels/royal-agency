@@ -9,15 +9,10 @@ import DropDownMenu from './drop-down-menu';
 
 interface NavbarProps {
   scrollToProcess: () => void;
-  scrollToShopifyStores: () => void;
-  scrollToServices: () => void; // Define scrollToServices function
+  scrollToServices: () => void;
 }
 
-const Navbar = ({
-  scrollToProcess,
-  scrollToShopifyStores,
-  scrollToServices, // Add scrollToServices to props
-}: NavbarProps) => {
+const Navbar = ({ scrollToProcess, scrollToServices }: NavbarProps) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   const toggleDropDown = () => {
@@ -51,13 +46,21 @@ const Navbar = ({
              bg-gradient-to-b from-neutral-50
               to bg-neutral-400 bg-opacity-50'
         >
-          <div onClick={scrollToProcess} className='hover:text-gray-50'>
+          <Link
+            href={'/'}
+            onClick={scrollToProcess}
+            className='hover:text-gray-50'
+          >
             Policy and Work Process
-          </div>
+          </Link>
 
-          <div onClick={scrollToShopifyStores} className='hover:text-gray-50'>
+          <Link
+            href='/'
+            onClick={scrollToServices}
+            className='hover:text-gray-50'
+          >
             Services
-          </div>
+          </Link>
 
           <Link href='/pricing' className='hover:text-gray-50'>
             Pricing
