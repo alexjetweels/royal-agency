@@ -5,25 +5,26 @@ import Image from 'next/image';
 const stores = [
   {
     image: '/images/image2.png',
-    quote: 'Bird showed us to get started, what to do, and how to do it.',
+    quote:
+      'Royal Agency showed us to get started, what to do, and how to do it.',
     name: 'Jason Scer',
   },
   {
     image: '/images/shop-2.jpeg',
     quote:
-      'We had no idea how to get started, but Bird showed us the way. And we were able to create something amazing.',
+      'We had no idea how to get started, but Royal Agency showed us the way. And we were able to create something amazing.',
     name: 'John Prency',
   },
 
   {
     image: '/images/s-2.webp',
     quote:
-      'The team at Bird is amazing. They helped us create a stunning store that we are proud of.',
+      'The team at Royal Agency is amazing. They helped us create a stunning store that we are proud of.',
     name: 'Miguel Martinez',
   },
 ];
 
-const ShopifyStores = () => {
+const Achievement = () => {
   return (
     <section
       className=' mt-10 md:py-10 bg-[#f6f5f4] w-full
@@ -70,4 +71,4 @@ const ShopifyStores = () => {
   );
 };
 
-export default ShopifyStores;
+export default Achievement;
