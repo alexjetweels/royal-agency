@@ -15,11 +15,11 @@ import Services from './services';
 import FAQS from './faq';
 import { InfiniteMovingCardsDemo } from './snippets/infinite-moving-card-snippet';
 import { FaTelegram } from 'react-icons/fa';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
-  // const router = useRouter();
+  const router = useRouter();
 
   const toggleDropdown = () => {
     setDropdownVisible(!isDropdownVisible);
@@ -35,7 +35,7 @@ export default function Home() {
   const servicesRef = useRef<HTMLDivElement>(null);
 
   const scrollToProcess = () => {
-    // router.push('/');
+    router.push('/');
     websiteDesignRef.current?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
@@ -44,13 +44,13 @@ export default function Home() {
   };
 
   const scrollToShopifyStores = () => {
-    // router.push('/');
+    router.push('/');
     shopifyStoresRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   // Function to scroll to Services section
   const scrollToServices = () => {
-    // router.push('/');
+    router.push('/');
     servicesRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
