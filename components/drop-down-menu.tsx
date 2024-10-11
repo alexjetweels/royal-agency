@@ -1,15 +1,18 @@
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface DropDownMenuProps {
   onClose: () => void;
   scrollToServices: () => void; // Add scrollToServices function to props
 }
 
-const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose, scrollToServices }) => {
+const DropDownMenu: React.FC<DropDownMenuProps> = ({
+  onClose,
+  scrollToServices,
+}) => {
   return (
     <motion.div
-      className="
+      className='
     w-screen
     h-screen
     bg-gradient-to-b 
@@ -25,26 +28,22 @@ const DropDownMenu: React.FC<DropDownMenuProps> = ({ onClose, scrollToServices }
      right-0
      z-50
      rounded-t-3xl
-    "
-      initial={{ opacity: 0, y: "-80%" }}
+    '
+      initial={{ opacity: 0, y: '-80%' }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: "-100%" }}
+      exit={{ opacity: 0, y: '-100%' }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex-col flex space-y-10">
-        <Link href="/pricing" className="text-black text-2xl">
+      <div className='flex-col flex space-y-10'>
+        <Link href='/pricing' className='text-black text-2xl'>
           Pricing
         </Link>
-        <Link href="/contact" className="text-black text-2xl">
+        <Link href='/contact' className='text-black text-2xl'>
           Contact
         </Link>
 
-        <Link href="/book" className="text-black text-2xl">
-          Book a call
-        </Link>
-
         {/* Add onClick handler to Services link */}
-        <Link href='/#services'  className="cursor-pointer text-black text-2xl">
+        <Link href='/#services' className='cursor-pointer text-black text-2xl'>
           Services
         </Link>
       </div>
