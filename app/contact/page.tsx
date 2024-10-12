@@ -3,11 +3,43 @@
 import Navbar from '@/components/navbar';
 import Link from 'next/link';
 import { FaTelegram, FaSkype } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
+
+const contactList = [
+  {
+    url: 'https://t.me/jacksproyal',
+    name: 'Jack | Telegram',
+    icon: (
+      <FaTelegram size={50} className='text-white group-hover:text-black' />
+    ),
+  },
+  {
+    url: 'https://t.me/Gnas99',
+    name: 'Royal Agency | Telegram',
+    icon: (
+      <FaTelegram size={50} className='text-white group-hover:text-black' />
+    ),
+  },
+  {
+    url: 'https://join.skype.com/invite/pHCdCJuQHHVO',
+    name: 'Jack | Skype',
+    icon: <FaSkype size={50} className='text-white group-hover:text-black' />,
+  },
+];
 
 export default function ContactForm() {
+  const router = useRouter();
+
   return (
-    <div className=' w-full   md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden '>
-      <Navbar scrollToProcess={() => {}} scrollToServices={() => {}} />
+    <div className=' w-full h-screen  md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden '>
+      <Navbar
+        scrollToProcess={() => {
+          router.push('/');
+        }}
+        scrollToServices={() => {
+          router.push('/');
+        }}
+      />
       <div className='md:flex items-start justify-center md:py-20 px-6'>
         <div className=''>
           <div className='text-5xl font-medium  w-full md:w-2/3  pb-5 md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50'>
@@ -41,31 +73,16 @@ export default function ContactForm() {
         </div>
 
         <div className='flex flex-col gap-7'>
-          <Link href={'https://t.me/jacksproyal'} target='_blank'>
-            <div className='flex gap-4 items-center'>
-              <FaTelegram color='white' size={50} />{' '}
-              <span className='text-white font-bold'>Jack | Telegram</span>
-            </div>
-          </Link>
-
-          <Link href={'https://t.me/Gnas99'} target='_blank'>
-            <div className='flex gap-4 items-center'>
-              <FaTelegram color='white' size={50} />{' '}
-              <span className='text-white font-bold'>
-                Royal Agency | Telegram
-              </span>
-            </div>
-          </Link>
-
-          <Link
-            href={'https://join.skype.com/invite/pHCdCJuQHHVO'}
-            target='_blank'
-          >
-            <div className='flex gap-4 items-center'>
-              <FaSkype color='white' size={50} />{' '}
-              <span className='text-white font-bold'>Jack | Skype</span>
-            </div>
-          </Link>
+          {contactList.map((contact, index) => (
+            <Link key={index} href={contact.url} target='_blank'>
+              <div className='flex gap-4 items-center hover:bg-slate-100 p-2 rounded-2xl group'>
+                {contact.icon}
+                <span className='text-white font-bold group-hover:text-black'>
+                  {contact.name}
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
