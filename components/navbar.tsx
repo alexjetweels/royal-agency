@@ -32,9 +32,9 @@ const Navbar = ({ scrollToProcess, scrollToServices }: NavbarProps) => {
               priority
               src='/logo/logo.svg'
               alt='Logo'
-              width={100}
-              height={100}
-              className='w-10 h-10 md:w-14 md:h-14 bg-white text-white'
+              width={150}
+              height={150}
+              className='w-16 h-16 md:w-14 md:h-14 bg-white text-white'
             />
           </Link>
         </div>

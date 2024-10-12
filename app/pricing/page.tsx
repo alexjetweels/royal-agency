@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { PiCheckCircleFill } from 'react-icons/pi';
 
 import Navbar from '@/components/navbar';
+import { useRouter } from 'next/navigation';
 
 const plans = [
   {
@@ -56,13 +57,21 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const router = useRouter();
   return (
     <div
       className='w-full  md:items-center md:justify-center
      bg-black/[0.96] antialiased 
      bg-grid-white/[0.02] relative overflow-hidden'
     >
-      <Navbar scrollToProcess={() => {}} scrollToServices={() => {}} />
+      <Navbar
+        scrollToProcess={() => {
+          router.push('/');
+        }}
+        scrollToServices={() => {
+          router.push('/');
+        }}
+      />
 
       <div className='flex items-center justify-center flex-col   '>
         <div className='text-5xl pb-10 md:pb-20 text-slate-300 px-6 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-500 bg-opacity-50'>
