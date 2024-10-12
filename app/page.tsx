@@ -17,6 +17,8 @@ import { InfiniteMovingCardsDemo } from './snippets/infinite-moving-card-snippet
 import { FaTelegram } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
+export const runtime = 'edge';
+
 export default function Home() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const router = useRouter();
