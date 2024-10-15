@@ -7,6 +7,14 @@ import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+const imagesList = [
+  '/images/facebook-1.jpg',
+  '/images/facebook-2.jpg',
+  '/images/facebook-3.jpg',
+  '/images/facebook-4.jpg',
+  '/images/agency.jpg',
+];
+
 const SliderOne = () => {
   const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
@@ -30,75 +38,18 @@ const SliderOne = () => {
   return (
     <div>
       <Slider {...settings}>
-        <>
-          <div className='rounded-md px-2 md:p-10'>
+        {imagesList.map((image, index) => (
+          <div key={image} className='rounded-md px-2 md:p-10'>
             <Image
               priority
-              src='/images/facebook-1.jpg'
+              src={image}
               alt='logo'
               width={500}
               height={500}
-              objectFit='cover'
               className='rounded-2xl'
             />
           </div>
-        </>
-
-        <>
-          <div className='rounded-md px-2 md:p-10'>
-            <Image
-              priority
-              src='/images/facebook-2.jpg'
-              alt='logo'
-              width={500}
-              height={500}
-              objectFit='cover'
-              className='rounded-2xl'
-            />
-          </div>
-        </>
-
-        <>
-          <div className='rounded-md px-2 md:p-10'>
-            <Image
-              priority
-              src='/images/facebook-3.jpg'
-              alt='logo'
-              width={500}
-              height={500}
-              objectFit='cover'
-              className='rounded-2xl'
-            />
-          </div>
-        </>
-
-        <>
-          <div className='rounded-md px-2 md:p-10'>
-            <Image
-              priority
-              src='/images/facebook-4.jpg'
-              alt='logo'
-              width={500}
-              height={500}
-              objectFit='cover'
-              className='rounded-2xl'
-            />
-          </div>
-        </>
-
-        <>
-          <div className='rounded-md px-2 md:p-10'>
-            <Image
-              priority
-              src='/images/agency.jpg'
-              alt='logo'
-              width={500}
-              height={500}
-              objectFit='cover'
-              className='rounded-2xl'
-            />
-          </div>
-        </>
+        ))}
       </Slider>
     </div>
   );
