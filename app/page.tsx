@@ -53,7 +53,7 @@ export default function Home() {
   };
 
   return (
-    <div className='w-full md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden'>
+    <div className='w-full md:items-center md:justify-center bg-black/[0.9] antialiased bg-grid-white/[0.02] relative overflow-hidden'>
       <Navbar
         scrollToProcess={scrollToProcess}
         scrollToServices={scrollToServices}

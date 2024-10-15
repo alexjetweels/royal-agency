@@ -30,11 +30,11 @@ const Navbar = ({ scrollToProcess, scrollToServices }: NavbarProps) => {
           <Link className='cursor-pointer' href='/'>
             <Image
               priority
-              src='/logo/logo.svg'
+              src='/logo.jpeg'
               alt='Logo'
-              width={150}
-              height={150}
-              className='w-16 h-16 md:w-14 md:h-14 bg-white text-white'
+              width={200}
+              height={200}
+              className='w-20 h-20 md:w-14 md:h-14 bg-white text-white'
             />
           </Link>
         </div>
